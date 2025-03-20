@@ -1,0 +1,327 @@
+/* Modern Design System */
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+  --background: #0f172a;
+  --surface: #1e293b;
+  --surface-light: #334155;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-radius: 8px;
+  --transition: all 0.2s ease;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Base Styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  padding: 0 16px 90px;
+  line-height: 1.5;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  padding: 16px 0;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  z-index: 10;
+  border-bottom: 1px solid var(--surface-light);
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.app-title .icon {
+  font-size: 1em;
+}
+
+/* Dashboard Stats */
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 auto 20px;
+  max-width: 600px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border-radius: var(--border-radius);
+  padding: 10px 16px;
+  min-width: 100px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Counter Container */
+#counterContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Counter Cards */
+.counter {
+  background: var(--surface);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: var(--transition);
+  border: 1px solid var(--surface-light);
+}
+
+.counter:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Counter Name */
+.counter-name {
+  background: var(--surface-light);
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  width: 100%;
+  transition: var(--transition);
+}
+
+.counter-name:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Counter Controls */
+.counter-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Counter Value */
+.counter-value {
+  width: 60px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  background: var(--surface-light);
+  color: var(--text);
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+  padding: 8px;
+  transition: var(--transition);
+}
+
+.counter-value:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Buttons */
+button {
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 15px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Counter Buttons */
+.counter-btn {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  width: 36px;
+  height: 36px;
+}
+
+.counter-btn.decrement {
+  background: var(--surface-light);
+}
+
+.reset-btn {
+  background: var(--warning);
+  color: white;
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+}
+
+.delete-btn {
+  background: var(--danger);
+  color: white;
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+}
+
+/* Action Bar */
+.action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.action-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* App Actions */
+#resetButton {
+  background: var(--danger);
+  color: white;
+}
+
+#addCounter {
+  background: var(--success);
+  color: white;
+  font-weight: 600;
+}
+
+#exportData, #importData {
+  background: var(--primary);
+  color: white;
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+}
+
+.tooltip:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-bottom: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .action-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Dark mode focus styles */
+input:focus, button:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* File input styling */
+.file-input-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.file-input-wrapper input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 0.3s;
+}
